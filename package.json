@@ -1,11 +1,18 @@
 {
   "name": "add-accessors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility for adding getters and setters to classes",
   "main": "js/index.js",
   "scripts": {
     "prepublish": "babel -s inline -d js/ src/",
     "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgentME/add-accessors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AgentME/add-accessors/issues"
   },
   "author": "Chris Cowan <agentme49@gmail.com>",
   "license": "MIT",
