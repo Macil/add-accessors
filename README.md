@@ -70,6 +70,10 @@ Getters and setter methods are added for the specified member variables, and a
 to `undefined`, and calls destroy methods on the values of the member variables
 that were set to have it called.
 
+If the object already had a "destroy" method before addAccessors was called on
+it, then the new "destroy" method will call it at the end, so addAccessors will
+work correctly with inheritance.
+
 ## Miscellaneous
 
 Additional checks are done at run-time to make sure that addAccessors is used
