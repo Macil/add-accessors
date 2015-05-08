@@ -1,4 +1,5 @@
-const _ = require('lodash');
+const difference = require('lodash/array/difference');
+const has = require('lodash/object/has');
 
 function getGetterName(variableName) {
   return 'get' + variableName.charAt(1).toUpperCase() + variableName.slice(2);
@@ -28,7 +29,7 @@ export default function addAccessors(obj, descriptors) {
   descriptors.forEach(descriptor => {
     const {name} = descriptor;
     if (process.env.NODE_ENV !== 'production') {
-      const unsupportedProps = _.difference(
+      const unsupportedProps = difference(
         Object.keys(descriptor), SUPPORTED_DESCRIPTOR_PROPS);
       if (unsupportedProps.length) {
         throw new Error("Unsupported accessor descriptor properties: " +
@@ -46,7 +47,7 @@ export default function addAccessors(obj, descriptors) {
   obj.destroy = function() {
     descriptors.forEach(descriptor => {
       const {name, destroy} = descriptor;
-      if (_.has(this, name)) {
+      if (has(this, name)) {
         const value = this[name];
         this[name] = undefined;
         if (destroy && value) {
