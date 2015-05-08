@@ -25,7 +25,6 @@ const SUPPORTED_DESCRIPTOR_PROPS = [
 ];
 
 export default function addAccessors(obj, descriptors) {
-  descriptors = Array.from(descriptors);
   descriptors.forEach(descriptor => {
     const {name} = descriptor;
     if (process.env.NODE_ENV !== 'production') {
