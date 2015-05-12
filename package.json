@@ -1,6 +1,6 @@
 {
   "name": "add-accessors",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Utility for adding getters and setters to classes",
   "main": "js/index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "babel": "^5.2.17",
+    "mocha": "^2.2.4",
     "sinon": "^1.14.1"
   }
 }
