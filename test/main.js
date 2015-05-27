@@ -241,4 +241,19 @@ describe('addAccessors', function() {
     a.destroy();
     b.destroy();
   });
+
+  it("existing destroy method is called before members are cleared", function() {
+    const spy = sinon.spy();
+    class A {
+      destroy() {
+        assert.notEqual(this._b, null);
+        spy();
+      }
+    }
+    addAccessors(A.prototype, [{name:'_b', set:true}]);
+    const a = new A();
+    a.setB({});
+    a.destroy();
+    assert(spy.calledOnce);
+  });
 });

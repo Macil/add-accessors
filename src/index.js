@@ -45,6 +45,9 @@ export default function addAccessors(obj, descriptors) {
   });
   const superDestroy = obj.destroy;
   obj.destroy = function() {
+    if (superDestroy) {
+      superDestroy.call(this);
+    }
     descriptors.forEach(descriptor => {
       const {name, destroy} = descriptor;
       if (has(this, name)) {
@@ -62,8 +65,5 @@ export default function addAccessors(obj, descriptors) {
         }
       }
     });
-    if (superDestroy) {
-      superDestroy.call(this);
-    }
   };
 }
