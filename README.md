@@ -1,5 +1,8 @@
 # addAccessors
 
+[![Circle CI](https://circleci.com/gh/AgentME/add-accessors.svg?style=shield)](https://circleci.com/gh/AgentME/add-accessors)
+[![npm version](https://badge.fury.io/js/add-accessors.svg)](https://badge.fury.io/js/add-accessors)
+
 This is a javascript library for adding getters, setters, and a "destroy"
 method that unsets member variables to a class.
 
