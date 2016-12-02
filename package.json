@@ -1,6 +1,6 @@
 {
   "name": "add-accessors",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Utility for adding getters and setters to classes",
   "main": "js/index.js",
   "scripts": {
