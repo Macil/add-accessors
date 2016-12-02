@@ -1,5 +1,5 @@
-const difference = require('lodash/array/difference');
-const has = require('lodash/object/has');
+const difference = require('lodash/difference');
+const has = require('lodash/has');
 
 function getGetterName(variableName) {
   return 'get' + variableName.charAt(1).toUpperCase() + variableName.slice(2);
